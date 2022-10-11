@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoList</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+<body>
+    <header>
+        <h1>To Do List</h1>
+        <div class="divAlerte">
+            <!-- <p>Veuillez compléter une tâche avant sa suppression</p>              -->
+        </div>
+    </header>
+   
+    <form>
+        <input type="text" class="input" placeholder="Ajouter une tache">
+        <button class="button" type="submit">
+            <i class="fa-solid fa-square-plus"></i>
+        </button>
+        
+        <div class="containerFiltreSelect">
+            <select name="filtre" class="filtre">
+              <option value="toutes">Toutes</option>
+              <option value="complete">Complétée</option>
+              <option value="aFaire">À Faire</option>
+            </select>
+        </div>
+        <button type="submit" class="reset">
+            Reset
+            <i class="fa-solid fa-trash"></i>
+        </button>
+        
+
+    </form>
+    <div class="tacheContainer">
+        <ul class="listeTaches"></ul>
+    </div>
+    
+    <footer>
+        <button type="submit" class="envoyer">
+            Envoyer par Email
+        </button>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
+
+<!-- <div class="tache">
+    <li class="tacheLibele">Tache 1</li>
+    <button class="boutonCheck">
+        <i class="fa-solid fa-check"></i>
+    </button>
+    <button class="boutonPoubelle">
+        <i class="fa-solid fa-trash"></i>
+    </button>
+</div> -->

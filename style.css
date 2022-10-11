@@ -1,0 +1,286 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    background-image: linear-gradient(120deg,#44c35d, #068a3b);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh; /*l'application fait automatiquement 100% de la hauteur de la fenêtre*/
+    
+}
+header{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    
+    
+}
+header h1{
+  margin: 0 auto;
+}
+header, form{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form input, .button{
+    padding: 0.5rem;
+    font-size: 2rem;
+    border:none;
+    background: white;
+    
+}
+form input{
+  border-radius: 5px 0 0 5px;
+}
+form input::placeholder{
+  font-size: 17px; 
+}
+.button{
+    color: #068a20;
+    background: white;
+    cursor: pointer;
+    transition : all 0.3s ease;
+    border-radius: 0 5px 5px 0;
+}
+.button:hover{
+    background: #068a36;
+    color:white
+}
+
+.tacheContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+  
+.listeTaches {
+  min-width: 30%;
+  list-style: none;
+}
+  
+.tache {
+  margin: 0.5rem;
+  background: white;
+  color: black;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s ease;
+  border-radius: 5px;
+  min-width: 150px;
+  
+}
+  
+  /* grace à flex:1, les deux boutons (check et suppr) sont POUSSÉS vers la droite*/
+.tache li {
+  flex: 1;
+}
+li{
+  cursor: pointer;
+}
+/* .classeInputTache{
+  -webkit-appearance: none;
+  -moz-appeareance: none;
+  appearance: none;
+  outline: none;
+  box-shadow: none;
+  border: none;    
+} */
+.classeInputTache{
+  outline: none;
+  font-size: 30px;  
+  line-height: 1.5em;
+  border: solid #e93a3a;
+  border-radius: 5px 0 0 5px;
+  transition: flex-grow, box-shadow;
+  transition-duration: 2s;    
+}
+
+
+.boutonPoubelle,
+.boutonCheck {
+  background: #e93a3a;
+  color: black;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.boutonPoubelle{
+  border-radius: 0 5px 5px 0;
+}
+
+.boutonCheck {
+  background: rgb(70, 159, 243);
+}
+.tacheLibele {
+  padding: 0rem 0.5rem;
+}
+
+/*----règle de soucis du "click" lors de la supression ou du cheked sur les boutons coté JS--------*/
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+  
+}
+/*-----------------*/
+
+.tacheEffectue {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+.supp {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appeareance: none;
+  appearance: none;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  
+}
+.containerFiltreSelect {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+
+}
+select {
+  color: #061048;
+  width: 10rem;
+  cursor: pointer;
+  padding: 1.15rem;
+  
+}
+.containerFiltreSelect::after{
+  /*insertion d'un caractère unicode type "fleche du bas" grace au code css"\25BC" associé à ce caractère */
+  content: "\25BC";
+  position: absolute;
+  background: #046518;
+  top: 0;
+  right: 0;
+  padding: 1.15rem;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  
+}
+.containerFiltreSelect:hover::after {
+  background: white;
+  color: #068a36;
+}
+.reset{
+  padding: 0.5rem;  
+  border:none;  
+  border-radius: 5px;  
+  background: white;
+  cursor: pointer;
+  transition : all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 2.7em;
+  
+  color : rgb(0, 0, 0)
+}
+
+.reset:hover{
+  background: #e93a3a;
+  color:white;
+  font-weight: bold;
+}
+
+.suppression {
+  transition-property: opacity, height, right, margin-top;
+  transition-delay: 0s, 67ms;
+  transition-duration: 200ms;
+  transition-timing-function: 
+    cubic-bezier(0, 0, 0.2, 1),
+    cubic-bezier(0.68, -0.55, 0.32, 2.5);
+  opacity: 0;
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  margin-top: 0;
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+  margin: 25px auto;
+  
+}
+
+.envoyer{
+  padding: 0.5rem;  
+  border:none;  
+  border-radius: 5px;  
+  background: white;
+  cursor: pointer;
+  transition : all 0.2s ease;
+  text-transform: uppercase;
+  font-size: 23px;
+  line-height: 2em;
+  width: 300px
+}
+.envoyer:hover{
+  background: #05702d;
+  color:white;
+  font-weight: bold;
+}
+
+.divAlerte{
+  display: flex;
+  align-items: center;
+  margin: auto;  
+  height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  background: #045722;
+  color: white;
+  top: -95px;
+  position: absolute;  
+  transition: 1s;  
+  border-radius: 10px;
+}
+.alerteActive{
+  top: 6px; 
+}
+
+.divAlerte{    
+  margin: 0 auto 0 auto;
+  padding: 10px;
+}
+
+.alerteTremblement{
+  animation: faux 0.3s;
+  -webkit-animation: alerteTremblement 0.3s;
+}
+@keyframes alerteTremblement {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+      transform: translateX(5px);
+  }
+  50% {
+      transform: translateX(-5px);
+  }
+  75% {
+      transform: translateX(5px);
+  }
+  100% {
+      transform: translateX(0px);
+  }
+}
