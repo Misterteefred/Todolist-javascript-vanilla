@@ -1,8 +1,3 @@
-/*
-
- * travailler sur le drag&drop
- */
-
 //SELECTEURS
 const elBouton = document.querySelector('.button');
 const elInput = document.querySelector('.input');
