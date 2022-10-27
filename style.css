@@ -86,8 +86,14 @@ form input::placeholder{
   max-width: 700px; 
 }
 .tacheLibele{
+  /*Permet de n pas passer à la ligne...*/
   white-space: nowrap;
+    
+  /*... de ne pas dépasser de son conteneur...*/
   overflow:hidden;
+    
+  /*...et permet d'afficher '...' lorsque la chaine est trop longue*/
+  /*va de paire avec 'max-width: 700px' de la classe 'tache' au dessus. Il faut absolument donner une largeur max*/
   text-overflow: ellipsis;
 }
 
