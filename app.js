@@ -1,3 +1,4 @@
+
 //SELECTEURS
 const elBouton = document.querySelector('.button');
 const elInput = document.querySelector('.input');
@@ -32,6 +33,9 @@ function ajouterTache(e){
     //Div de la tache
     const elDivTache = document.createElement('div');
     elDivTache.classList.add('tache');
+    elDivTache.classList.add('animate__animated');
+    elDivTache.classList.add('animate__fadeIn');
+    
     //libelé de la tâche
     const elLitacheLibele = document.createElement('li');
     elLitacheLibele.classList.add('tacheLibele');
@@ -54,12 +58,18 @@ function ajouterTache(e){
     sauvegarde(objetTache);
 
     elDivTache.append(elLitacheLibele,elBoutonCheck,elBoutonPoubelle);
-    elListeTaches.append(elDivTache);    
+    elListeTaches.append(elDivTache);
+    window.setTimeout(function() {
+        elListeTaches.lastElementChild.classList.remove('animate__animated');
+        elListeTaches.lastElementChild.classList.remove('animate__fadeIn');
+    }, 300);  
     elInput.value = ""
 }
 
+
 function modifierCheckSupprimer(e){
     if (e.target.classList.value === "tacheLibele"){
+        console.log(e.target.classList.value)
         const  elLitache= e.target;
 
         const elInput = document.createElement('input');        
@@ -298,6 +308,3 @@ function envoyer(e){
         window.location = url;
     }   
 }
-
-
-
