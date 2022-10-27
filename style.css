@@ -88,12 +88,10 @@ form input::placeholder{
 .tacheLibele{
   /*Permet de n pas passer à la ligne...*/
   white-space: nowrap;
-    
   /*... de ne pas dépasser de son conteneur...*/
   overflow:hidden;
-    
   /*...et permet d'afficher '...' lorsque la chaine est trop longue*/
-  /*va de paire avec 'max-width: 700px' de la classe 'tache' au dessus. Il faut absolument donner une largeur max*/
+  /*va de paire avec 'max-width: 700px' de la classe 'tache' au dessus*/
   text-overflow: ellipsis;
 }
 
@@ -306,6 +304,10 @@ footer{
   100% {
       transform: translateX(0px);
   }
+}
+
+.animate__animated.animate__fadeIn {
+  --animate-duration: 0.3s;
 }
 
 @media screen and (max-width: 785px) {
