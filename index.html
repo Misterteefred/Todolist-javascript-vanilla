@@ -15,27 +15,32 @@
     <header>
         <h1>To Do List</h1>
         <div class="divAlerte">
-            <!-- <p>Veuillez compléter une tâche avant sa suppression</p>              -->
+           
         </div>
     </header>
    
     <form>
+        <div class="divInputButton">
         <input type="text" class="input" placeholder="Ajouter une tache">
         <button class="button" type="submit">
             <i class="fa-solid fa-square-plus"></i>
         </button>
-        
-        <div class="containerFiltreSelect">
-            <select name="filtre" class="filtre">
-              <option value="toutes">Toutes</option>
-              <option value="complete">Complétée</option>
-              <option value="aFaire">À Faire</option>
-            </select>
         </div>
-        <button type="submit" class="reset">
-            Reset
-            <i class="fa-solid fa-trash"></i>
-        </button>
+
+        <div class="containerFiltreBouton">
+            <div class="containerFiltreSelect">
+                <select name="filtre" class="filtre">
+                  <option value="toutes">Toutes</option>
+                  <option value="complete">Complétée</option>
+                  <option value="aFaire">À Faire</option>
+                </select>
+            </div>
+            <button type="submit" class="reset">
+                Reset
+                <i class="fa-solid fa-trash"></i>
+            </button>
+        </div>
+        
         
 
     </form>
@@ -51,13 +56,3 @@
     <script src="app.js"></script>
 </body>
 </html>
-
-<!-- <div class="tache">
-    <li class="tacheLibele">Tache 1</li>
-    <button class="boutonCheck">
-        <i class="fa-solid fa-check"></i>
-    </button>
-    <button class="boutonPoubelle">
-        <i class="fa-solid fa-trash"></i>
-    </button>
-</div> -->
