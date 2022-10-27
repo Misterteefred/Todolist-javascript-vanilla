@@ -31,14 +31,16 @@ form input, .button{
     padding: 0.5rem;
     font-size: 2rem;
     border:none;
-    background: white;
-    
+    background: white;    
+}
+.divInputButton{
+  display: flex;
 }
 form input{
   border-radius: 5px 0 0 5px;
 }
 form input::placeholder{
-  font-size: 17px; 
+  font-size: 15px; 
 }
 .button{
     color: #068a20;
@@ -53,6 +55,8 @@ form input::placeholder{
 }
 
 .tacheContainer {
+    margin-top: 30px;
+    margin-bottom: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,6 +82,15 @@ form input::placeholder{
   min-width: 150px;
   
 }
+.tache{
+  max-width: 700px; 
+}
+.tacheLibele{
+  white-space: nowrap;
+  overflow:hidden;
+  text-overflow: ellipsis;
+}
+
   
   /* grace à flex:1, les deux boutons (check et suppr) sont POUSSÉS vers la droite*/
 .tache li {
@@ -96,12 +109,15 @@ li{
 } */
 .classeInputTache{
   outline: none;
-  font-size: 30px;  
+  font-size: 18px;
   line-height: 1.5em;
   border: solid #e93a3a;
   border-radius: 5px 0 0 5px;
   transition: flex-grow, box-shadow;
-  transition-duration: 2s;    
+  transition-duration: 2s;
+  width: 100%;
+  height: 50.4px;
+  
 }
 
 
@@ -151,8 +167,11 @@ select {
   border: none;
   
 }
+.containerFiltreBouton{
+  display: flex;
+}
 .containerFiltreSelect {
-  margin: 1rem;
+  margin: 0 1rem 0 1rem;
   position: relative;
   overflow: hidden;
   border-radius: 5px;
@@ -190,8 +209,6 @@ select {
   transition : all 0.3s ease;
   text-transform: uppercase;
   font-size: 13px;
-  line-height: 2.7em;
-  
   color : rgb(0, 0, 0)
 }
 
@@ -282,5 +299,62 @@ footer{
   }
   100% {
       transform: translateX(0px);
+  }
+}
+
+@media screen and (max-width: 785px) {
+
+  form{
+    flex-direction: column;
+  }
+  .containerFiltreBouton {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  
+  }
+  .tache{
+    font-size: 1.2rem;
+  }
+  
+
+}
+@media screen and (max-width: 470px) {
+  form input, .button{
+    font-size: 1.5rem;
+  }
+  /* .tache{
+    width: 400px;
+    height: 50.4px;
+  } */
+  .tacheLibele{
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+  }
+  .containerFiltreBouton {
+    margin-bottom: 0;
+    height: 30px;
+  }
+  .filtre{
+    width: 7rem;
+    padding: 8px;
+  }
+  .containerFiltreSelect::after{    
+    top: 0;
+    right: 0;
+    padding: 5px;
+    padding-bottom: 10px;
+    height: 19px;
+  
+    
+  }
+  .envoyer{
+    font-size: 15px;
+    width: 200px;
+  }
+}
+@media screen and (max-width: 415px) {
+  form input, .button{
+    font-size: 1.1rem;
   }
 }
